@@ -4,228 +4,121 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>엄태윤 | 전략기획·경영관리 포트폴리오</title>
-    <meta name="description" content="원가 결산, 사업계획, 투자관리, AI PM 경험을 갖춘 전략기획·경영관리 실무자 엄태윤의 포트폴리오">
+    <meta name="description" content="SAP CO 제조원가 결산, 사업계획, 투자관리, AI PM 경험을 갖춘 전략기획·경영관리 실무자 엄태윤의 포트폴리오">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="site-header">
-        <a class="brand" href="#top" aria-label="홈으로 이동">
-            <span class="brand-mark">TY</span>
-            <span>
-                <strong>엄태윤</strong>
-                <small>Strategy · Controlling · AI PM</small>
-            </span>
-        </a>
-        <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false">
-            <span></span>
-            <span></span>
-        </button>
-        <nav class="site-nav" aria-label="주요 메뉴">
-            <a href="#positioning">방향성</a>
-            <a href="#evidence">핵심성과</a>
-            <a href="#projects">프로젝트</a>
-            <a href="#resume">이력요약</a>
-            <a href="#contact">연락처</a>
-        </nav>
-    </header>
+    <button class="global-menu-toggle-btn" id="menuToggleBtn" aria-label="메뉴 열기/닫기">
+        <i data-lucide="menu"></i>
+    </button>
+    <div class="sidebar-trigger-zone" id="sidebar-trigger-zone"></div>
 
-    <main id="top">
-        <section class="hero section-band">
-            <div class="hero-copy">
-                <p class="eyebrow">제조업 경영 숫자를 아는 전략기획 실무자</p>
-                <h1>원가와 결산을 이해하고, 사업계획과 시스템 도입까지 연결합니다.</h1>
-                <p class="hero-lead">
-                    SAP CO 기반 제조원가 결산, 월간 손익 분석, 사업계획·투자계획 수립, 관계사 정산,
-                    원자재 예측 AI 프로젝트 PM을 경험했습니다. 숫자의 정확도와 실행의 현실성을 함께 보는
-                    전략기획·경영관리 담당자를 지향합니다.
-                </p>
-                <div class="hero-actions">
-                    <a class="button primary" href="#projects">대표 프로젝트 보기</a>
-                    <a class="button secondary" href="mailto:akrrpwjd@naver.com">메일 보내기</a>
+    <div class="dashboard-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-profile">
+                <div class="sidebar-avatar"><img src="profile.jpg" alt="엄태윤 프로필 사진"></div>
+                <div class="sidebar-name">엄태윤</div>
+                <div class="sidebar-role">Strategic Planning · Controlling</div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#home" class="nav-link active" data-tab="home"><i data-lucide="home"></i><span>홈</span></a>
+                <a href="#resume" class="nav-link" data-tab="resume"><i data-lucide="file-text"></i><span>이력 요약</span></a>
+                <a href="#projects" class="nav-link" data-tab="projects"><i data-lucide="briefcase"></i><span>대표 프로젝트</span></a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="mailto:akrrpwjd@naver.com" class="sidebar-contact-link"><i data-lucide="mail"></i><span>akrrpwjd@naver.com</span></a>
+            </div>
+        </aside>
+
+        <main class="main-content" id="mainContent">
+            <section id="home" class="tab-panel active">
+                <div class="hero-section">
+                    <div class="hero-tag">Manufacturing Strategy · SAP CO · AI PM</div>
+                    <h1 class="hero-title">복잡한 제조업 숫자를<br>의사결정 언어로 바꿉니다</h1>
+                    <p class="hero-desc">
+                        4개 플랜트 SAP CO 제조원가 결산, 사업계획과 투자 검토, 관계사 정산, AI 솔루션 도입까지.<br>
+                        현장의 기준정보와 경영진 보고 사이를 연결하며 <strong>숫자의 신뢰도와 실행 속도</strong>를 높여온<br>
+                        전략기획·경영관리 담당자 엄태윤입니다.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn-primary">프로젝트 보기</a>
+                        <a href="#resume" class="btn-secondary">이력 요약</a>
+                    </div>
                 </div>
-            </div>
-            <aside class="hero-panel" aria-label="프로필 요약">
-                <img src="profile.jpg" alt="엄태윤 프로필 사진" class="profile-image">
-                <div>
-                    <strong>엄태윤</strong>
-                    <span>㈜에코프로머티리얼즈 전략기획팀</span>
+
+                <div class="fit-panel" aria-label="지원 적합 직무와 핵심 역량">
+                    <div class="fit-column">
+                        <span class="fit-label">Target Roles</span>
+                        <div class="fit-tags">
+                            <span>경영관리</span>
+                            <span>관리회계</span>
+                            <span>전략기획</span>
+                            <span>사업계획</span>
+                            <span>제조업 DX</span>
+                            <span>AI PM</span>
+                        </div>
+                    </div>
+                    <div class="fit-column fit-summary">
+                        <span class="fit-label">Core Fit</span>
+                        <p>SAP CO 제조원가와 손익 구조를 이해하고, 사업계획·투자 검토·시스템 도입까지 실행으로 연결합니다.</p>
+                    </div>
                 </div>
-                <dl>
-                    <div>
-                        <dt>경력</dt>
-                        <dd>2년 1개월, 재직 중</dd>
+
+                <div class="stats-grid">
+                    <div class="stat-card" data-link-tab="projects" data-link-project="p1"><span class="stat-number">25% → 10%</span><span class="stat-label">표준-실적 원가 차이 개선</span><span class="stat-link">자세히 보기 →</span></div>
+                    <div class="stat-card" data-link-tab="projects" data-link-project="p2"><span class="stat-number">12회+</span><span class="stat-label">월간 손익 분석·경영 보고</span><span class="stat-link">자세히 보기 →</span></div>
+                    <div class="stat-card" data-link-tab="projects" data-link-project="p3"><span class="stat-number">4억원</span><span class="stat-label">원자재 예측 AI 도입 PM</span><span class="stat-link">자세히 보기 →</span></div>
+                    <div class="stat-card" data-link-tab="projects" data-link-project="p6"><span class="stat-number">12개사</span><span class="stat-label">관계사 용역비 계약·정산</span><span class="stat-link">자세히 보기 →</span></div>
+                </div>
+            </section>
+
+            <section id="resume" class="tab-panel">
+                <div class="resume-sheet-header"><h2 class="resume-name-title">UM TAEYOON</h2><span class="resume-job-sub">STRATEGIC PLANNING · BUSINESS CONTROLLING · AI PROJECT PM</span></div>
+                <div class="resume-sheet-body">
+                    <div class="sheet-column column-left">
+                        <div class="sheet-profile-container"><img src="profile.jpg" alt="엄태윤" class="sheet-profile-img"></div>
+                        <div class="sheet-section"><h4 class="sheet-sec-title">PROFILE</h4><div class="contact-info-list"><div class="info-row"><span class="info-tag">Name</span><span class="info-val">엄태윤</span></div><div class="info-row"><span class="info-tag">Email</span><a class="info-val nowrap-text" href="mailto:akrrpwjd@naver.com">akrrpwjd@naver.com</a></div><div class="info-row"><span class="info-tag">Phone</span><span class="info-val">010-6286-1195</span></div><div class="info-row"><span class="info-tag">Career</span><span class="info-val">2년 1개월 · 재직 중</span></div></div></div>
+                        <div class="sheet-section"><h4 class="sheet-sec-title">CORE SKILLS</h4><ul class="sheet-bullets compact-bullets"><li>SAP CO 제조원가 결산</li><li>표준원가·BOM·Routing 검증</li><li>사업계획·CAPEX 검토</li><li>월간 손익 분석·경영 보고</li><li>AI 솔루션 도입 PM</li><li>관계사 정산·내부거래 관리</li></ul></div>
                     </div>
-                    <div>
-                        <dt>직무축</dt>
-                        <dd>경영관리 · 전략기획 · AI PM</dd>
+                    <div class="sheet-column column-center">
+                        <div class="sheet-section"><h4 class="sheet-sec-title">EXPERIENCE</h4><div class="sheet-history-item"><div class="history-meta"><strong>㈜에코프로머티리얼즈 <span class="meta-sub">| 전략기획팀 사원</span></strong><span class="history-date">2024.06 - 재직 중</span></div><ul class="sheet-bullets"><li>4개 생산 플랜트 SAP CO 제조원가 월결산 및 연간 표준원가 산정</li><li>사업계획, 인원계획, 투자계획 수립 지원 및 손익 영향도 분석</li><li>월간 계획 대비 손익 변동 요인 분석 및 경영진 보고 자료 작성</li><li>원자재 가격·소요량 예측 AI 솔루션 도입 PM 및 AI TF 실무</li><li>12개 관계사 공통 용역비 배부 계약·정산 및 내부거래 검토</li></ul></div></div>
+                        <div class="sheet-section"><h4 class="sheet-sec-title">EDUCATION</h4><div class="sheet-edu-item"><div class="edu-meta"><strong>부경대학교 <span class="meta-sub">| 국제경영학</span></strong><span class="edu-date">2021.03 - 2023.08</span></div><div class="edu-grid"><span class="edu-grid-val">졸업</span><span class="edu-grid-val">복수전공: 국제통상학</span><span class="edu-grid-val">4.45 / 4.5</span></div></div><div class="sheet-edu-item"><div class="edu-meta"><strong>경성대학교 <span class="meta-sub">| 국제무역통상학과</span></strong><span class="edu-date">2019.03 - 2021.02</span></div><div class="edu-grid"><span class="edu-grid-val">편입 전 수료</span><span class="edu-grid-val">4.418 / 4.5</span></div></div></div>
                     </div>
-                    <div>
-                        <dt>강점</dt>
-                        <dd>제조원가, 손익분석, 부서 조율</dd>
+                    <div class="sheet-column column-right">
+                        <div class="sheet-section"><h4 class="sheet-sec-title">ACTIVITY</h4><ul class="sheet-bullets-activity"><li><div class="act-header"><strong>KT AIVLE School</strong><span class="act-date">2023.08 - 2024.01</span></div><p class="act-sub-desc">DX 컨설턴트 트랙 840시간 수료, Big Project 우수상</p></li><li><div class="act-header"><strong>Arkansas State University</strong><span class="act-date">2022.08 - 2022.12</span></div><p class="act-sub-desc">Business Communication, Marketing 등 수료</p></li><li><div class="act-header"><strong>부경대학교 교육지원장학생</strong><span class="act-date">2022.03 - 2022.06</span></div><p class="act-sub-desc">논문 작성 지원, 리서치 및 통계 분석 보조</p></li></ul></div>
+                        <div class="sheet-section"><h4 class="sheet-sec-title">LICENSE · AWARD</h4><ul class="sheet-bullets-license"><li><span>SQLD <span class="meta-sub">| 한국데이터산업진흥원</span></span><span class="sec-date">2024.04</span></li><li><span>ADsP <span class="meta-sub">| 한국데이터산업진흥원</span></span><span class="sec-date">2024.03</span></li><li><span>AICE Associate <span class="meta-sub">| KT</span></span><span class="sec-date">2023.11</span></li><li><span>OPIc IH <span class="meta-sub">| ACTFL</span></span><span class="sec-date">2023.08</span></li></ul></div>
                     </div>
-                </dl>
-            </aside>
-        </section>
+                </div>
+            </section>
 
-        <section id="positioning" class="section">
-            <div class="section-heading">
-                <p class="eyebrow">Positioning</p>
-                <h2>AI도 하는 기획자가 아니라, 제조업 숫자를 아는 기획자입니다.</h2>
-                <p>
-                    현재 업무의 중심은 SAP CO와 원가 결산입니다. 여기에 사업계획, 투자심의, 관계사 정산,
-                    AI 솔루션 도입 PM이 붙으면서 “숫자-계획-실행”을 연결하는 경험을 쌓았습니다.
-                </p>
-            </div>
-            <div class="position-grid">
-                <article class="position-item">
-                    <span>01</span>
-                    <h3>원가와 결산의 기본기</h3>
-                    <p>4개 생산 플랜트의 실제 원가 결산, 표준원가 산정, BOM·라우팅 기준정보 검증을 담당했습니다.</p>
-                </article>
-                <article class="position-item">
-                    <span>02</span>
-                    <h3>경영진 보고로 이어지는 분석</h3>
-                    <p>계획 대비 손익 변동 요인을 원장 단위로 분석하고, 월간·분기·반기 경영 보고 자료를 작성했습니다.</p>
-                </article>
-                <article class="position-item">
-                    <span>03</span>
-                    <h3>계획을 실행으로 옮기는 조율</h3>
-                    <p>AI 솔루션 도입, 협업툴 인프라 구축, 관계사 정산 체계 정비처럼 부서 간 합의가 필요한 과제를 맡았습니다.</p>
-                </article>
-            </div>
-        </section>
+            <section id="projects" class="tab-panel">
+                <div class="panel-header"><h2 class="panel-title">Key Projects</h2><p class="panel-subtitle">복잡한 실무를 문제, 역할, 성과 중심으로 정리했습니다. 카드를 클릭하면 상세 내용을 볼 수 있습니다.</p></div>
+                <div id="projects-timeline" class="projects-timeline">
+                    <div class="timeline-spine"></div>
+                    <div class="tl-item tl-top" data-target="p1" style="--tl-delay:0.1s"><div class="tl-branch"></div><div class="tl-dot"></div><div class="tl-card"><span class="tl-badge">SAP CO · 제조원가</span><h4>4개 플랜트 제조원가 결산 체계 운영</h4><p class="tl-meta"><span>2025.06 - 현재</span><span>실무 담당</span></p><p class="tl-desc">표준원가, BOM, Routing, 코스트센터 기준정보를 관리하며 표준-실적 차이를 25%에서 10%로 개선</p><span class="tl-arrow">상세 보기 →</span></div></div>
+                    <div class="tl-item tl-bottom" data-target="p2" style="--tl-delay:0.4s"><div class="tl-branch"></div><div class="tl-dot"></div><div class="tl-card"><span class="tl-badge">손익 분석 · 경영 보고</span><h4>월간 결산 분석 및 경영진 보고 체계화</h4><p class="tl-meta"><span>2025.06 - 현재</span><span>전담 작성</span></p><p class="tl-desc">계획, 시뮬레이션, 전월 대비 손익 변동을 원장 단위로 분석하고 이상 변동 기준을 수립</p><span class="tl-arrow">상세 보기 →</span></div></div>
+                    <div class="tl-item tl-top" data-target="p3" style="--tl-delay:0.7s"><div class="tl-branch"></div><div class="tl-dot"></div><div class="tl-card"><span class="tl-badge">AI PM · SCM</span><h4>원자재 가격·소요량 예측 AI 도입 PM</h4><p class="tl-meta"><span>2025.04 - 현재</span><span>PM</span></p><p class="tl-desc">4억 원 규모 AI SaaS 도입을 위해 현업, IT, 보안, 외부사를 조율하고 경영진 인사이트 보고까지 연결</p><span class="tl-arrow">상세 보기 →</span></div></div>
+                    <div class="tl-item tl-bottom" data-target="p4" style="--tl-delay:1.0s"><div class="tl-branch"></div><div class="tl-dot"></div><div class="tl-card"><span class="tl-badge">사업계획 · CAPEX</span><h4>중장기 사업계획 및 투자 심의 지원</h4><p class="tl-meta"><span>2025.06 - 현재</span><span>실무 지원</span></p><p class="tl-desc">인원계획, 투자계획, 감가상각, 현금흐름을 검토해 사업계획의 실행 가능성과 수익성을 점검</p><span class="tl-arrow">상세 보기 →</span></div></div>
+                    <div class="tl-item tl-top" data-target="p5" style="--tl-delay:1.3s"><div class="tl-branch"></div><div class="tl-dot"></div><div class="tl-card"><span class="tl-badge">협업툴 · 인프라 PM</span><h4>전사 협업 솔루션 PoC부터 정식 도입까지 주관</h4><p class="tl-meta"><span>2024.12 - 2025.05</span><span>PM</span></p><p class="tl-desc">방화벽, 보안성 검토, 계약, 교육, 사용자 운영까지 A to Z로 수행해 50명 대상 도입 완료</p><span class="tl-arrow">상세 보기 →</span></div></div>
+                    <div class="tl-item tl-bottom" data-target="p6" style="--tl-delay:1.6s"><div class="tl-branch"></div><div class="tl-dot"></div><div class="tl-card"><span class="tl-badge">Shared Service · 내부거래</span><h4>12개 관계사 공통 용역비 계약·정산 체계 정비</h4><p class="tl-meta"><span>2024.06 - 현재</span><span>단독 운영</span></p><p class="tl-desc">배부율, Mark-up, Pass-through, 세무 쟁점을 정리하고 분기별 6천 건 이상 원장 분류를 자동화</p><span class="tl-arrow">상세 보기 →</span></div></div>
+                </div>
+                <div id="projects-detail-view" class="projects-detail-view hidden"><button id="tl-back-btn" class="tl-back-btn"><i data-lucide="arrow-left"></i><span>타임라인으로 돌아가기</span></button><div class="project-detail-wrapper">
+                    <div class="project-detail-panel" id="p1"><div class="detail-header"><span class="proj-badge">SAP CO · 제조원가</span><h3>4개 플랜트 제조원가 결산 체계 운영</h3><div class="proj-meta"><span><i data-lucide="calendar"></i> 2025.06 - 현재</span><span><i data-lucide="pie-chart"></i> 실무 담당</span></div></div><div class="detail-story"><div class="story-block"><h5><i data-lucide="help-circle"></i> 문제</h5><p>RMP, CPM 등 연속공정 구조에서 표준원가와 실제 원가의 차이가 크고, BOM·Routing·MES 입력 오류가 결산 정확도와 마감 속도를 흔들었습니다.</p></div><div class="story-block"><h5><i data-lucide="wrench"></i> 수행</h5><p>BOM, Routing, 제품 네이밍, 광물 구분, Activity 수량, 코스트센터 그룹을 월별로 검증했습니다. 사업계획과 메탈·환율 예측을 반영해 표준원가와 SKF 배부 기준을 관리하고, 개발비·재고평가충당금 전표 처리 로직도 정리했습니다.</p></div><div class="story-block"><h5><i data-lucide="check-circle2"></i> 결과</h5><p class="highlight-p">표준원가 대비 실적 차이를 25%에서 10% 수준으로 낮추고, 기준정보 오류를 월평균 2건 이하로 관리해 결산 마감 시간을 약 3시간 단축했습니다.</p></div></div></div>
+                    <div class="project-detail-panel" id="p2"><div class="detail-header"><span class="proj-badge">손익 분석 · 경영 보고</span><h3>월간 결산 분석 및 경영진 보고 체계화</h3><div class="proj-meta"><span><i data-lucide="calendar"></i> 2025.06 - 현재</span><span><i data-lucide="bar-chart-3"></i> 전담 작성</span></div></div><div class="detail-story"><div class="story-block"><h5><i data-lucide="help-circle"></i> 문제</h5><p>결산 이후 숫자는 나왔지만, 계획·시뮬레이션·전월 대비 왜 달라졌는지 설명할 수 있는 원장 단위 분석과 보고 기준이 필요했습니다.</p></div><div class="story-block"><h5><i data-lucide="wrench"></i> 수행</h5><p>BS, PL, 제조원가명세서, 손익조회 리포트를 기반으로 비용·단가·환율·메탈 시세·개발비·Shared Service 변동을 추적했습니다. 변동계수 12% 또는 5,000만 원 이상 항목을 모니터링 기준으로 삼아 특이사항을 선별했습니다.</p></div><div class="story-block"><h5><i data-lucide="check-circle2"></i> 결과</h5><p class="highlight-p">월간 결산 분석 보고서 12회 이상, 분기·반기 경영 분석 보고서 4회 이상을 작성하며 경영진 의사결정에 필요한 원인 중심 보고 체계를 만들었습니다.</p></div></div></div>
+                    <div class="project-detail-panel" id="p3"><div class="detail-header"><span class="proj-badge">AI PM · SCM</span><h3>원자재 가격·소요량 예측 AI 도입 PM</h3><div class="proj-meta"><span><i data-lucide="calendar"></i> 2025.04 - 현재</span><span><i data-lucide="network"></i> PM</span></div></div><div class="detail-story"><div class="story-block"><h5><i data-lucide="help-circle"></i> 문제</h5><p>니켈 등 핵심 원자재의 가격과 소요량 변동은 재고, 구매 타이밍, 손익에 직접 영향을 주지만, 외부 SaaS 도입은 국가핵심기술 보안 이슈와 인프라 연동 이슈가 컸습니다.</p></div><div class="story-block"><h5><i data-lucide="wrench"></i> 수행</h5><p>현업 요구사항, 데이터 테이블 정의, 보안성 검토, 인프라 연결, 외부사 정기 미팅을 조율했습니다. 사내 AI TF 담당자로 20건 이상 솔루션을 검토하고, CVC·국가기관·업체와 PoC 셋업 및 RFP 대응을 진행했습니다.</p></div><div class="story-block"><h5><i data-lucide="check-circle2"></i> 결과</h5><p class="highlight-p">4억 원 규모 AI SaaS 도입 PM으로 보안 검토와 연동 테스트를 추진했고, 원자재 예측 인사이트를 대표이사 대상 월간 보고로 연결했습니다.</p></div></div></div>
+                    <div class="project-detail-panel" id="p4"><div class="detail-header"><span class="proj-badge">사업계획 · CAPEX</span><h3>중장기 사업계획 및 투자 심의 지원</h3><div class="proj-meta"><span><i data-lucide="calendar"></i> 2025.06 - 현재</span><span><i data-lucide="calculator"></i> 실무 지원</span></div></div><div class="detail-story"><div class="story-block"><h5><i data-lucide="help-circle"></i> 문제</h5><p>사업계획은 단순 취합이 아니라 생산계획, 인원, 투자, 감가상각, 현금흐름이 맞물려야 했습니다. 투자 안건마다 필요성과 대안 검토가 필요했습니다.</p></div><div class="story-block"><h5><i data-lucide="wrench"></i> 수행</h5><p>인원계획에서는 조별 필요 인원과 자동화 절감 가능성을 검토했고, 투자계획에서는 견적 비교, 자산화 여부, 내용연수별 감가상각 영향, 자금 집행 일정을 점검했습니다.</p></div><div class="story-block"><h5><i data-lucide="check-circle2"></i> 결과</h5><p class="highlight-p">60여 건의 투자 안건 중 핵심 안건의 ROI와 비용 반영 기준을 검토하고, 생산량 시나리오별 제조원가·영업이익 영향 분석에 기여했습니다.</p></div></div></div>
+                    <div class="project-detail-panel" id="p5"><div class="detail-header"><span class="proj-badge">협업툴 · 인프라 PM</span><h3>전사 협업 솔루션 PoC부터 정식 도입까지 주관</h3><div class="proj-meta"><span><i data-lucide="calendar"></i> 2024.12 - 2025.05</span><span><i data-lucide="users"></i> PM</span></div></div><div class="detail-story"><div class="story-block"><h5><i data-lucide="help-circle"></i> 문제</h5><p>포항, 오창, 서울 등 사업장 간 협업이 분산되어 있었고, 외부 협업 솔루션 도입에는 방화벽, 보안성 검토, 계약, 교육, 운영관리까지 한 번에 풀어야 할 과제가 있었습니다.</p></div><div class="story-block"><h5><i data-lucide="wrench"></i> 수행</h5><p>업체 미팅, PoC 일정, NDA·계약 품의, 보안성 검토, 방화벽 설정, Teams 온보딩 커뮤니티, 사용자 가이드, 교육 6회, SSL 인증서와 서버 DB 운영까지 A to Z로 담당했습니다.</p></div><div class="story-block"><h5><i data-lucide="check-circle2"></i> 결과</h5><p class="highlight-p">50EA 라이선스와 서버 구축 조건을 협의해 정식 도입을 완료했고, 사용자 피드백 기반 개선 요청과 운영관리 체계를 만들었습니다.</p></div></div></div>
+                    <div class="project-detail-panel" id="p6"><div class="detail-header"><span class="proj-badge">Shared Service · 내부거래</span><h3>12개 관계사 공통 용역비 계약·정산 체계 정비</h3><div class="proj-meta"><span><i data-lucide="calendar"></i> 2024.06 - 현재</span><span><i data-lucide="building-2"></i> 단독 운영</span></div></div><div class="detail-story"><div class="story-block"><h5><i data-lucide="help-circle"></i> 문제</h5><p>12개 관계사에 제공하는 공통 용역은 배부율, Mark-up, Pass-through, 세무 쟁점, 내부거래 승인까지 얽혀 있어 매 분기 분쟁 가능성이 높았습니다.</p></div><div class="story-block"><h5><i data-lucide="wrench"></i> 수행</h5><p>매출액과 인원계획 50:50 가중평균, 부서별 제공 업무량, 비용 성격을 기준으로 배부율을 산정했습니다. 분기별 6천 건 이상 원장을 자동 분류하고, 법무·컴플라이언스·관계사와 쟁점 비용을 조율했습니다.</p></div><div class="story-block"><h5><i data-lucide="check-circle2"></i> 결과</h5><p class="highlight-p">계약·정산·이사회 승인 대응에 필요한 기준과 가이드를 정리해 업무 공백을 줄였고, 관계사별 비용 설명과 정산 프로세스를 체계화했습니다.</p></div></div></div>
+                </div></div>
+            </section>
 
-        <section id="evidence" class="section compact-section">
-            <div class="section-heading">
-                <p class="eyebrow">Evidence</p>
-                <h2>숫자로 확인되는 업무 경험</h2>
-            </div>
-            <div class="metric-grid">
-                <article class="metric-card"><strong>25% → 10%</strong><span>표준원가 대비 실적 차이 개선</span></article>
-                <article class="metric-card"><strong>3시간</strong><span>결산 마감 시간 단축</span></article>
-                <article class="metric-card"><strong>4개 플랜트</strong><span>SAP CO 제조원가 결산 담당</span></article>
-                <article class="metric-card"><strong>4억 원</strong><span>원자재 예측 AI 도입 PM</span></article>
-                <article class="metric-card"><strong>12개 관계사</strong><span>공통 용역비 배부·정산 체계 운영</span></article>
-                <article class="metric-card"><strong>60여 건</strong><span>투자 안건 검토 및 사업계획 반영</span></article>
-            </div>
-        </section>
-
-        <section id="projects" class="section">
-            <div class="section-heading">
-                <p class="eyebrow">Selected Projects</p>
-                <h2>대표 프로젝트</h2>
-                <p>지원 직무와 연결성이 높은 순서로 정리했습니다. 각 사례는 문제, 수행, 결과가 바로 보이도록 구성했습니다.</p>
-            </div>
-
-            <div class="project-list">
-                <article class="project-card">
-                    <div class="project-meta"><span>관리회계 · SAP CO</span><time>2025.06 - 현재</time></div>
-                    <h3>SAP CO 제조원가 결산 및 기준정보 검증</h3>
-                    <p>
-                        4개 생산 플랜트의 제조원가 월결산과 연간 표준원가 산정을 담당했습니다.
-                        MES-SAP 인터페이스, BOM, 라우팅 기준정보를 정기 검증해 원가 차이의 원인을 사전에 줄였습니다.
-                    </p>
-                    <ul class="result-list">
-                        <li>표준원가 대비 실적 차이 25%에서 10% 수준으로 개선</li>
-                        <li>기준정보 오차 월평균 2건 이하 관리, 결산 마감 3시간 단축</li>
-                        <li>SCM·손익 시뮬레이션 시스템과 SAP CO 연계 데이터 약 200건 검증</li>
-                    </ul>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-meta"><span>경영기획 · 사업계획</span><time>2025.06 - 현재</time></div>
-                    <h3>월간 손익 분석과 사업계획·투자계획 수립 지원</h3>
-                    <p>
-                        결산 이후 계획 대비 손익 변동 요인을 원장 단위로 분석하고, 연간·중장기 사업계획의
-                        인원계획과 투자계획 수립을 지원했습니다.
-                    </p>
-                    <ul class="result-list">
-                        <li>월간 결산 분석 보고서 12회, 분기·반기 경영 분석 보고서 4회 작성</li>
-                        <li>변동계수 12% 또는 5,000만 원 이상 비용 모니터링 기준 수립</li>
-                        <li>투자 안건 60여 건 중 핵심 안건 ROI, 자산화, 감가상각 영향도 검토</li>
-                    </ul>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-meta"><span>AI PM · DX</span><time>2025.04 - 현재</time></div>
-                    <h3>원자재 가격 및 소요량 예측 AI 솔루션 도입 PM</h3>
-                    <p>
-                        국가핵심기술 보안 가이드라인을 고려해 현업, IT, 정보보안, 외부 AI 업체의 요구사항을
-                        조율하고, SCM 최적화를 위한 예측 솔루션 도입을 추진했습니다.
-                    </p>
-                    <ul class="result-list">
-                        <li>4억 원 규모 AI SaaS 도입 프로젝트의 실무 PM 수행</li>
-                        <li>6개 유관 부서 및 외부사 보안 심의·인프라 연동 조율</li>
-                        <li>AI TF 활동으로 20건 이상 솔루션 검토, 6건 PoC·과제 셋업 완료</li>
-                    </ul>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-meta"><span>정산 · 내부거래</span><time>2024.06 - 현재</time></div>
-                    <h3>12개 관계사 공통 용역비 배부·정산 체계 운영</h3>
-                    <p>
-                        지주사와 관계사 간 공통 용역비 배부 기준을 합의하고, 분기별 실제 발생 비용 정산과
-                        내부거래 심의 자료 준비를 담당했습니다.
-                    </p>
-                    <ul class="result-list">
-                        <li>12개 관계사 대상 공통 용역비 배부 계약 및 정산 체계 운영</li>
-                        <li>내부거래 이사회 승인 전 거래 규모 사전 검토 및 법무·컴플라이언스 협의</li>
-                        <li>분기별 원장 데이터 분류 자동화 로직과 정산 가이드라인 수립</li>
-                    </ul>
-                </article>
-            </div>
-        </section>
-
-        <section id="resume" class="section resume-section">
-            <div class="section-heading">
-                <p class="eyebrow">Resume Summary</p>
-                <h2>이력 요약</h2>
-            </div>
-            <div class="resume-layout">
-                <article class="resume-block">
-                    <h3>경력</h3>
-                    <div class="timeline-item">
-                        <strong>㈜에코프로머티리얼즈</strong>
-                        <span>전략기획팀 · 사원 · 2024.06 - 재직 중</span>
-                        <p>SAP CO 월결산, 표준원가, 손익분석, 사업계획, 투자계획, 관계사 정산, AI 프로젝트 PM 수행</p>
-                    </div>
-                </article>
-                <article class="resume-block">
-                    <h3>핵심역량</h3>
-                    <div class="tag-cloud">
-                        <span>SAP CO</span><span>제조원가</span><span>관리회계</span><span>사업계획</span><span>CAPEX</span><span>손익분석</span><span>AI PM</span><span>RFP</span><span>Power Query</span><span>SQLD</span><span>ADsP</span>
-                    </div>
-                </article>
-                <article class="resume-block">
-                    <h3>교육·수상</h3>
-                    <ul class="plain-list">
-                        <li>KT AIVLE School DX 컨설턴트 트랙 수료, 840시간</li>
-                        <li>KT AIVLE School Big Project 우수상</li>
-                        <li>BDIA 해커톤 우수상, 부산광역시장상</li>
-                        <li>부경대학교 국제경영학 졸업, 학점 4.45 / 4.5</li>
-                    </ul>
-                </article>
-            </div>
-        </section>
-
-        <section id="contact" class="section contact-section">
-            <div>
-                <p class="eyebrow">Contact</p>
-                <h2>숫자와 실행을 함께 보는 기획자로 기여하겠습니다.</h2>
-                <p>경영관리, 전략기획, 원가관리, 사업계획, 제조업 DX 과제에 관심이 있습니다.</p>
-            </div>
-            <div class="contact-actions">
-                <a class="button primary" href="mailto:akrrpwjd@naver.com">akrrpwjd@naver.com</a>
-                <a class="button secondary" href="tel:01062861195">010-6286-1195</a>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <span>© 2026 Taeyoon Um</span>
-        <a href="#top">맨 위로</a>
-    </footer>
-
+            
+        </main>
+    </div>
     <script src="app.js"></script>
 </body>
 </html>
