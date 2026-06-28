@@ -1,0 +1,1151 @@
+/* ══════════════════════════════════════════
+   PORTFOLIO DESIGN SYSTEM & STYLING
+   ══════════════════════════════════════════ */
+
+:root {
+    --bg-dark: #ffffff;
+    --bg-sidebar: #f8fafc;
+    --bg-card: #ffffff;
+    --border-card: rgba(0, 0, 0, 0.06);
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --primary: #1d4ed8;       /* Royal Blue */
+    --accent: #059669;        /* Emerald */
+    --accent-light: #10b981;
+    --glow-violet: rgba(139, 92, 246, 0.03);
+    --glow-emerald: rgba(5, 150, 105, 0.03);
+    --sidebar-width: 280px;
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', 'Noto Sans KR', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Typography Extensions */
+h1, h2, h3, h4, h5, .sidebar-name, .panel-title, .resume-name-title {
+    font-family: 'Outfit', 'Noto Sans KR', sans-serif;
+}
+
+/* ══════════════════════════════════════════
+   LAYOUT GRID & SIDEBAR
+   ══════════════════════════════════════════ */
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Global Floating Menu Toggle Button */
+.global-menu-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    width: 44px;
+    height: 44px;
+    background: #ffffff;
+    border: 1.5px solid var(--border-card);
+    border-radius: 10px;
+    color: var(--text-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.global-menu-toggle-btn:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* Sidebar Hover Zone */
+.sidebar-trigger-zone {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 30px;
+    z-index: 490;
+    background: transparent;
+    pointer-events: auto;
+}
+
+/* Left Sidebar */
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--bg-sidebar);
+    border-right: 1px solid var(--border-card);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 500;
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    transition: transform var(--transition-speed) ease;
+    transform: translateX(-100%); /* 데스크톱 기본 접힘 */
+}
+
+.sidebar.open {
+    transform: translateX(0);
+    box-shadow: 10px 0 40px rgba(15, 23, 42, 0.06);
+}
+
+.sidebar-profile {
+    text-align: center;
+}
+
+.sidebar-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    margin: 0 auto 16px auto;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(29, 78, 216, 0.15);
+}
+
+.sidebar-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.sidebar-role {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    background-color: #ffffff;
+    color: var(--primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.nav-link i {
+    width: 18px;
+    height: 18px;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    border-top: 1px solid var(--border-card);
+    padding-top: 16px;
+}
+
+.sidebar-contact-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.sidebar-contact-link:hover {
+    color: var(--primary);
+}
+
+/* ══════════════════════════════════════════
+   MAIN CONTENT AREA
+   ══════════════════════════════════════════ */
+
+.main-content {
+    flex: 1;
+    margin-left: 0;
+    padding: 90px 80px 80px 80px; /* 햄버거 버튼과 겹침 방지 */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    transition: margin-left var(--transition-speed) ease;
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: flex;
+    flex-direction: column;
+    animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.panel-header {
+    border-bottom: 1px solid var(--border-card);
+    padding-bottom: 16px;
+    margin-bottom: 12px;
+}
+
+.panel-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+}
+
+.panel-subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+/* ══════════════════════════════════════════
+   TAB 1: HOME PANEL
+   ══════════════════════════════════════════ */
+
+.hero-section {
+    padding: 40px 0;
+    max-width: 720px;
+}
+
+.hero-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.25;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+}
+
+.hero-desc {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 32px;
+}
+
+.hero-desc strong {
+    color: var(--text-primary);
+}
+
+.hero-actions {
+    display: flex;
+    gap: 16px;
+}
+
+.btn-primary, .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #1e40af;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.2);
+}
+
+.btn-secondary {
+    background-color: #f1f5f9;
+    color: var(--text-secondary);
+}
+
+.btn-secondary:hover {
+    background-color: #e2e8f0;
+    transform: translateY(-2px);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.stat-card {
+    background: #ffffff;
+    border: 1px solid var(--border-card);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(29, 78, 216, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.stat-number {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.stat-label {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.stat-link {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-top: auto;
+    transition: color 0.2s;
+}
+
+.stat-card:hover .stat-link {
+    color: var(--primary);
+}
+
+/* ══════════════════════════════════════════
+   TAB 2: RESUME PANEL
+   ══════════════════════════════════════════ */
+
+.resume-sheet-header {
+    border-bottom: 2px solid var(--text-primary);
+    padding-bottom: 16px;
+    margin-bottom: 32px;
+}
+
+.resume-name-title {
+    font-size: 38px;
+    font-weight: 900;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+}
+
+.resume-job-sub {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 1.5px;
+}
+
+.resume-sheet-body {
+    display: grid;
+    grid-template-columns: 240px 1fr 1fr;
+    column-gap: 36px;
+}
+
+/* Column Line Dividers via borders and padding */
+.sheet-column {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.column-left {
+    border-right: 1.5px solid rgba(0, 0, 0, 0.08);
+    padding-right: 28px;
+}
+
+.column-center {
+    border-right: 1.5px solid rgba(0, 0, 0, 0.08);
+    padding-right: 28px;
+}
+
+.nowrap-text {
+    white-space: nowrap;
+}
+
+/* Profile Image */
+.sheet-profile-container {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #f1f5f9;
+    border: 1px solid var(--border-card);
+}
+
+.sheet-profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sheet-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sheet-sec-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: 1px;
+    border-bottom: 1.5px solid var(--text-primary);
+    padding-bottom: 6px;
+}
+
+/* Contact List */
+.contact-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.info-tag {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.info-val {
+    color: var(--text-primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a.info-val:hover {
+    text-decoration: underline;
+    color: var(--primary);
+}
+
+/* Meta-sub premium bar style */
+.meta-sub {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-left: 6px;
+}
+
+/* Bullet Lists */
+.sheet-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px; /* 에코프로머티리얼즈 정보와 업무 리스트 간격 확보 */
+}
+
+.sheet-bullets li {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    position: relative;
+    padding-left: 14px;
+}
+
+.sheet-bullets li::before {
+    content: "•";
+    color: var(--primary);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Experience & Education meta block */
+.history-meta, .edu-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 14px;
+}
+
+.history-date, .edu-date {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-family: 'Inter', sans-serif;
+}
+
+.sheet-history-item, .sheet-edu-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Education Layout: Aligned Info */
+.edu-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-top: 4px;
+}
+
+.edu-grid-val {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Activity / Award layout in Column 3 */
+.sheet-bullets-activity {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.act-header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 13.5px;
+}
+
+.act-date {
+    font-size: 11.5px;
+    color: var(--text-muted);
+    font-family: 'Inter', sans-serif;
+}
+
+.act-sub-desc {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-top: 4px;
+}
+
+/* License Bullets */
+.sheet-bullets-license {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sheet-bullets-license li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.sec-date {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-family: 'Inter', sans-serif;
+}
+
+/* Award Badges */
+.award-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--primary);
+    background: rgba(29, 78, 216, 0.08);
+    border-radius: 4px;
+    padding: 1px 6px;
+    margin-left: 6px;
+}
+
+/* ══════════════════════════════════════════
+   TAB 3: PROJECTS TIMELINE (Horizontal)
+   ══════════════════════════════════════════ */
+
+.projects-timeline {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 520px;
+    padding: 0 20px;
+    margin: 40px 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+}
+
+/* 수평 스파인 라인 — 왼쪽에서 오른쪽으로 2초 동안 웅장하게 성장 */
+.timeline-spine {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 3px;
+    width: 0;
+    background: linear-gradient(to right, var(--primary), rgba(29, 78, 216, 0.4), rgba(5, 150, 105, 0.2));
+    border-radius: 2px;
+    z-index: 1;
+    animation: spineGrowHorizontal 2.0s cubic-bezier(0.25, 1, 0.5, 1) 0.1s forwards;
+}
+
+@keyframes spineGrowHorizontal {
+    to { width: 100%; }
+}
+
+/* 타임라인 개별 기둥 */
+.tl-item {
+    position: relative;
+    flex: 1;
+    min-width: 250px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: tlItemIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: var(--tl-delay, 0s);
+    z-index: 2;
+}
+
+@keyframes tlItemIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* 마디 점 (가로선 중앙 교차점) */
+.tl-dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    border: 3px solid var(--primary);
+    border-radius: 50%;
+    z-index: 4;
+    transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+    animation: dotPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    animation-delay: calc(var(--tl-delay, 0s) + 0.1s);
+}
+
+@keyframes dotPop {
+    to { transform: translate(-50%, -50%) scale(1); }
+}
+
+.tl-item:hover .tl-dot {
+    background: var(--primary);
+    transform: translate(-50%, -50%) scale(1.3);
+    box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.2);
+}
+
+/* 수직 기둥 가지 (위 / 아래 뻗어나감) */
+.tl-branch {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 0;
+    z-index: 2;
+}
+
+/* 위로 뻗는 가지 */
+.tl-top .tl-branch {
+    bottom: 50%;
+    background: linear-gradient(to top, var(--primary), rgba(29, 78, 216, 0.3));
+    animation: branchGrowUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: calc(var(--tl-delay, 0s) + 0.2s);
+}
+
+/* 아래로 뻗는 가지 */
+.tl-bottom .tl-branch {
+    top: 50%;
+    background: linear-gradient(to bottom, var(--primary), rgba(29, 78, 216, 0.3));
+    animation: branchGrowDown 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: calc(var(--tl-delay, 0s) + 0.2s);
+}
+
+@keyframes branchGrowUp {
+    to { height: 110px; }
+}
+
+@keyframes branchGrowDown {
+    to { height: 110px; }
+}
+
+/* 카드 배치 오프셋 (수직 가지 높이 110px 이후 위치) */
+.tl-top .tl-card {
+    bottom: calc(50% + 110px);
+    transform: translate(-50%, 15px) scale(0.95);
+    animation: cardRevealTop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    animation-delay: calc(var(--tl-delay, 0s) + 0.35s);
+}
+
+.tl-bottom .tl-card {
+    top: calc(50% + 110px);
+    transform: translate(-50%, -15px) scale(0.95);
+    animation: cardRevealBottom 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    animation-delay: calc(var(--tl-delay, 0s) + 0.35s);
+}
+
+@keyframes cardRevealTop {
+    to { opacity: 1; transform: translate(-50%, 0) scale(1); }
+}
+
+@keyframes cardRevealBottom {
+    to { opacity: 1; transform: translate(-50%, 0) scale(1); }
+}
+
+
+/* 카드 */
+
+.tl-card {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 240px;
+    background: #fff;
+    border: 1.5px solid rgba(0,0,0,0.06);
+    border-radius: 12px;
+    padding: 16px 18px;
+    cursor: pointer;
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+                border-color 0.2s;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+    z-index: 3;
+}
+
+/* 호버 시 상단 기둥은 위로, 하단 기둥은 아래로 리프트 효과 */
+.tl-top:hover .tl-card {
+    transform: translate(-50%, -6px) scale(1.01);
+    box-shadow: 0 12px 28px rgba(29, 78, 216, 0.12);
+    border-color: rgba(29, 78, 216, 0.25);
+}
+
+.tl-bottom:hover .tl-card {
+    transform: translate(-50%, 6px) scale(1.01);
+    box-shadow: 0 12px 28px rgba(29, 78, 216, 0.12);
+    border-color: rgba(29, 78, 216, 0.25);
+}
+
+
+.tl-badge {
+    display: inline-block;
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--primary);
+    background: rgba(29, 78, 216, 0.06);
+    border-radius: 20px;
+    padding: 2px 8px;
+    margin-bottom: 6px;
+}
+
+.tl-card h4 {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.4;
+    margin-bottom: 6px;
+}
+
+.tl-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 11.5px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    font-family: 'Inter', monospace;
+}
+
+.tl-desc {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.tl-arrow {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--primary);
+    opacity: 0;
+    transform: translateX(-4px);
+    display: inline-block;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.tl-card:hover .tl-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ══════════════════════════════════════════
+   PROJECT DETAILS STYLING
+   ══════════════════════════════════════════ */
+
+.projects-detail-view.hidden {
+    display: none;
+}
+
+.tl-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1.5px solid rgba(29, 78, 216, 0.25);
+    background: rgba(29, 78, 216, 0.04);
+    color: var(--primary);
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.tl-back-btn:hover {
+    background: rgba(29, 78, 216, 0.08);
+    transform: translateX(-2px);
+}
+
+.project-detail-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-detail-panel {
+    display: none;
+}
+
+.project-detail-panel.active {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.detail-header {
+    border-bottom: 1.5px solid var(--border-card);
+    padding-bottom: 16px;
+}
+
+.proj-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent);
+    background: rgba(5, 150, 105, 0.08);
+    border-radius: 20px;
+    padding: 2px 10px;
+    margin-bottom: 8px;
+}
+
+.detail-header h3 {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.proj-meta {
+    display: flex;
+    gap: 16px;
+    font-size: 12.5px;
+    color: var(--text-muted);
+}
+
+.proj-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.proj-meta i {
+    width: 14px;
+    height: 14px;
+}
+
+.detail-story {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.story-block {
+    background: #ffffff;
+    border: 1px solid var(--border-card);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.story-block h5 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.story-block h5 i {
+    width: 16px;
+    height: 16px;
+}
+
+.story-block p {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.highlight-p {
+    border-left: 3px solid var(--primary);
+    padding-left: 12px;
+    background-color: rgba(29, 78, 216, 0.02);
+}
+
+/* ══════════════════════════════════════════
+   TAB 4: WORK STORIES
+   ══════════════════════════════════════════ */
+
+.stories-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.story-card {
+    background: #ffffff;
+    border: 1px solid var(--border-card);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+
+.story-header-main {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.story-num {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--primary);
+    background: rgba(29, 78, 216, 0.08);
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.story-card h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.story-tagline {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 16px;
+}
+
+.story-body-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE DESIGN (MOBILE & TABLET)
+   ══════════════════════════════════════════ */
+
+@media (max-width: 992px) {
+    .global-menu-toggle-btn {
+        left: auto;
+        right: 16px;
+        top: 12px;
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+    }
+
+    .main-content {
+        padding: 80px 24px 40px 24px;
+    }
+
+    .sidebar {
+        z-index: 1005;
+        width: 100%;
+        max-width: var(--sidebar-width);
+    }
+
+    .resume-sheet-body {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .column-left, .column-center {
+        border-right: none;
+        padding-right: 0;
+        border-bottom: 1.5px solid rgba(0,0,0,0.08);
+        padding-bottom: 28px;
+    }
+
+    /* 모바일 환경에서는 수직형 타임라인으로 전환 */
+    .projects-timeline {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        padding: 24px 0 24px 48px;
+        margin: 20px 0;
+        overflow-x: hidden;
+        overflow-y: visible;
+        align-items: flex-start;
+    }
+    
+    .timeline-spine {
+        left: 20px;
+        top: 0;
+        width: 2px;
+        height: 100%;
+        transform: none;
+        background: linear-gradient(to bottom, var(--primary), rgba(29, 78, 216, 0.2));
+        animation: spineGrowVerticalMobile 1.5s ease-out forwards;
+    }
+
+    @keyframes spineGrowVerticalMobile {
+        from { height: 0; }
+        to { height: 100%; }
+    }
+
+    .tl-item {
+        width: 100%;
+        height: auto;
+        min-width: auto;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 28px;
+    }
+
+    .tl-dot {
+        left: 20px;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    /* 수평 기둥 가지 -> 수평 연결선으로 변경 */
+    .tl-top .tl-branch, .tl-bottom .tl-branch {
+        left: 20px;
+        width: 16px;
+        height: 2px;
+        top: 50%;
+        bottom: auto;
+        transform: translateY(-50%);
+        background: var(--primary);
+        animation: branchGrowMobile 0.4s ease-out forwards;
+        animation-delay: calc(var(--tl-delay, 0s) + 0.15s);
+    }
+
+    @keyframes branchGrowMobile {
+        from { width: 0; }
+        to { width: 16px; }
+    }
+
+    /* 모바일 카드 absolute 위치 해제 및 수평 마진 확보 */
+    .tl-top .tl-card, .tl-bottom .tl-card {
+        position: relative;
+        left: auto;
+        right: auto;
+        top: auto;
+        bottom: auto;
+        transform: none;
+        width: calc(100% - 16px);
+        max-width: 480px;
+        margin-left: 28px;
+        opacity: 0;
+        animation: cardRevealMobile 0.5s ease-out forwards;
+        animation-delay: calc(var(--tl-delay, 0s) + 0.3s);
+    }
+
+    @keyframes cardRevealMobile {
+        to { opacity: 1; }
+    }
+
+    /* 모바일 호버 효과 원복 */
+    .tl-top:hover .tl-card, .tl-bottom:hover .tl-card {
+        transform: translateY(-3px);
+    }
+
+}
